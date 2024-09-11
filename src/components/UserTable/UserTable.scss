@@ -1,0 +1,70 @@
+.user-table-container {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 90vh;
+    max-width: 100%; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+.user-table-frame {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    width: 80%; 
+}
+  
+h1 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.search-fields {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    margin-bottom: 20px;
+}
+  
+.search-fields input {
+    padding: 10px;
+    flex: 1; 
+    min-width: 5%;
+}
+  
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden; 
+    background-color: #fff;
+}
+  
+.user-table thead {
+    background-color: #444;
+    color: #fff; 
+}
+  
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: left;
+    min-width: 25%;
+}
+  
+.user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+.user-table tbody tr:hover {
+    background-color: #eee; 
+}
+  
+.user-table tbody td {
+    color: #000; 
+}
+  

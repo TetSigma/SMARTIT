@@ -1,0 +1,19 @@
+.custom-input {
+  padding: 12px 18px; 
+  border: 2px solid #ccc;
+  border-radius: 30px; 
+  background-color: white;
+  color: black; 
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: #4caf50; 
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); 
+  }
+
+  &::placeholder {
+    color: #aaa;
+  }
+}
