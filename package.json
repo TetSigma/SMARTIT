@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "tetsigma.smartit.com",
+  "homepage": "https://tetsigma.github.io/SMARTIT/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
