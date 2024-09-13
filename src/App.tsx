@@ -1,13 +1,14 @@
-import React from "react";
-import "./App.scss";
-import UserTable from "./components/UserTable/UserTable";
+import React from 'react';
+import UserTable from './components/UserTable/UserTable';
+import './App.scss';
 
-function App() {
+const App: React.FC = () => {
+
   return (
-    <div className="App">
+    <div className='app'>
       <UserTable />
     </div>
   );
-}
+};
 
 export default App;

@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "file-saver": "^2.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
-    "sass": "^1.78.0"
+    "sass": "^1.78.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

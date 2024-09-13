@@ -1,70 +1,134 @@
 .user-table-container {
-    background-color: #000;
-    padding: 20px;
-    border-radius: 10px; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    min-height: 90vh;
-    max-width: 100%; 
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  }
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  max-width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+  
 .user-table-frame {
-    background-color: #fff; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
-    width: 80%; 
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1200px; 
+  overflow-x: auto; 
+}
+  
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
   
 h1 {
-    color: #000;
-    text-align: center;
-    margin-bottom: 20px;
+  color: #000;
+  margin: 0;
 }
   
 .search-fields {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 10px; 
-    margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
   
 .search-fields input {
-    padding: 10px;
-    flex: 1; 
-    min-width: 5%;
+  padding: 10px;
+  flex: 1;
+  min-width: 5%;
 }
   
 .user-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 10px; 
-    overflow: hidden; 
-    background-color: #fff;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
 }
   
 .user-table thead {
-    background-color: #444;
-    color: #fff; 
+  background-color: #444;
+  color: #fff;
 }
   
 .user-table th,
 .user-table td {
-    padding: 12px;
-    text-align: left;
-    min-width: 25%;
+  padding: 12px;
+  text-align: left;
+  min-width: 150px;
+  white-space: nowrap; 
 }
   
 .user-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
   
 .user-table tbody tr:hover {
-    background-color: #eee; 
+  background-color: #eee;
 }
   
 .user-table tbody td {
-    color: #000; 
+  color: #000;
+}
+  
+.export-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+  
+.export-buttons button {
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+  
+.export-buttons button:hover {
+  background-color: #45a049;
+}
+  
+  /* Logic for small screens */
+@media (max-width: 768px) {
+  .search-fields {
+    flex-direction: column;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .user-table-frame {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .user-table th,
+  .user-table td {
+    min-width: 100px;
+  }
+  
+  .export-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .export-buttons button {
+    width: 100%;
+  }
 }
   

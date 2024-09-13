@@ -1,13 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
 import { fetchUsers, setFilter } from '../../redux/features/userSlice';
 import CustomInput from '../Input/CustomInput';
 import './UserTable.scss';
+import { exportToCSV, exportToExcel } from "../../utils/exportData";
+import UserModal from '../UserModal/UserModal';
+
 
 const UserTable: React.FC = () => {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users.filteredUsers);
   const filters = useAppSelector((state) => state.users.filters);
+
+  const [selectedUser, setSelectedUser] = useState(null); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -17,10 +23,26 @@ const UserTable: React.FC = () => {
     dispatch(setFilter({ field, value }));
   };
 
+  const openModal = (user: any) => {
+    setSelectedUser(user);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedUser(null);
+  };
+
   return (
     <div className="user-table-container">
       <div className="user-table-frame">
-        <h1>User Information</h1>
+        <div className="header-container">
+          <h1>User Information</h1>
+          <div className="export-buttons">
+            <button onClick={() => exportToCSV(users, "users")}>Export to CSV</button>
+            <button onClick={() => exportToExcel(users, "users")}>Export to Excel</button>
+          </div>
+        </div>
 
         <div className="search-fields">
           <CustomInput
@@ -57,7 +79,7 @@ const UserTable: React.FC = () => {
           <tbody>
             {users.length > 0 ? (
               users.map((user) => (
-                <tr key={user.id}>
+                <tr key={user.id} onClick={() => openModal(user)}>
                   <td>{user.name}</td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
@@ -72,6 +94,7 @@ const UserTable: React.FC = () => {
           </tbody>
         </table>
       </div>
+      <UserModal user={selectedUser} isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };
