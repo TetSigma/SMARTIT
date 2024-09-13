@@ -1,9 +1,9 @@
 {
   "name": "smartit",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": ".",
+  "homepage": "https://tetsigma.github.io/SMARTIT/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
